@@ -46,7 +46,45 @@
 
 	'use strict';
 	
-	console.log('something lalalla');
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var Foo = function () {
+	  function Foo(some) {
+	    _classCallCheck(this, Foo);
+	
+	    this.some = some;
+	  }
+	
+	  _createClass(Foo, [{
+	    key: 'log',
+	    value: function log() {
+	      console.log(this.some);
+	    }
+	  }, {
+	    key: 'alert',
+	    value: function (_alert) {
+	      function alert() {
+	        return _alert.apply(this, arguments);
+	      }
+	
+	      alert.toString = function () {
+	        return _alert.toString();
+	      };
+	
+	      return alert;
+	    }(function () {
+	      alert(this.some);
+	    })
+	  }]);
+	
+	  return Foo;
+	}();
+	
+	var foo = new Foo('Hello!!');
+	document.getElementById('alert').addEventListener('click', foo.alert.bind(foo));
+	document.getElementById('log').addEventListener('click', foo.log.bind(foo));
 
 /***/ }
 /******/ ]);
