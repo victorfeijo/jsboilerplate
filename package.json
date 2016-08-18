@@ -17,7 +17,7 @@
     "url": "https://github.com/victorfeijo/jsboilerplate/issues"
   },
   "homepage": "https://github.com/victorfeijo/jsboilerplate#readme",
-  "devDependencies": {
+  "dependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
