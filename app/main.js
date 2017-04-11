@@ -1,18 +1,18 @@
 class Foo {
   constructor(some) {
-    this.some = some
+    this.some = some;
   }
 
   log() {
-    console.log(this.some)
+    console.log(this.some);
   }
 
   alert() {
-    alert(this.some)
+    alert(`alert ${this.some}`);
   }
 }
 
-const foo = new Foo('Foo')
-document.getElementById('alert').addEventListener('click', foo.alert.bind(foo))
-document.getElementById('log').addEventListener('click', foo.log.bind(foo))
+const foo = new Foo('Foo');
+document.getElementById('alert').addEventListener('click', foo.alert.bind(foo));
+document.getElementById('log').addEventListener('click', foo.log.bind(foo));
 
